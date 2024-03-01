@@ -1,11 +1,11 @@
 ---
-title: "bioinfo"
+title: "What is bioinfomatics?"
 ---
 
-This is a Quarto website.
+With the rapid development in sequencing technology, this field has almost become synonymous with next-generation sequencing data analysis, however, this is not the case.  ‘Bio-informatics’ is a sub-branch of informatics which is the analysis of data or information which is then applied to solving problems, deriving conclusions or making predictions.  Think of sentiment analysis from social media platforms to determine what people are thinking and feeling about an organization.  As an example of this, in 2014 sentiment analysis was used to determine what people are thinking about the personalized genomics company, 23andMe.  You can download the report [here](https://vdeb.ern.ufs.ac.za/media/Alberto_Lusoli_ICA-2017.pdf).  The authors of this presentation collected Twitter feeds (tweets) for one week to determine how people are feeling about this company and what were the general reasons for interest.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Similarly, bioinformatics uses information generated from a biological context as data or information for analysis.  As you can realize that is extremely broad!  Solving the crystal structure of an enzyme using X-ray crystallography is quite different from analyzing a novel metabolic pathway.
 
-```{r}
-1 + 1
-```
+Have a look at [this](https://pubmed.ncbi.nlm.nih.gov/11552348/) publication.
+
+However, this blog, will mostly deal with nucleic sequence analysis and introduce you to the very basics.

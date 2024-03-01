@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "bioinfo",
+    "title": "What is bioinfomatics?",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "With the rapid development in sequencing technology, this field has almost become synonymous with next-generation sequencing data analysis, however, this is not the case. ‘Bio-informatics’ is a sub-branch of informatics which is the analysis of data or information which is then applied to solving problems, deriving conclusions or making predictions. Think of sentiment analysis from social media platforms to determine what people are thinking and feeling about an organization. As an example of this, in 2014 sentiment analysis was used to determine what people are thinking about the personalized genomics company, 23andMe. You can download the report here. The authors of this presentation collected Twitter feeds (tweets) for one week to determine how people are feeling about this company and what were the general reasons for interest.\nSimilarly, bioinformatics uses information generated from a biological context as data or information for analysis. As you can realize that is extremely broad! Solving the crystal structure of an enzyme using X-ray crystallography is quite different from analyzing a novel metabolic pathway.\nHave a look at this publication.\nHowever, this blog, will mostly deal with nucleic sequence analysis and introduce you to the very basics."
   },
   {
     "objectID": "about.html",
@@ -12,5 +12,33 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "alignment.html",
+    "href": "alignment.html",
+    "title": "Sequence alignment",
+    "section": "",
+    "text": "In this section, we will look at sequence alignments. We will look at the Needleman-Wunch algorithm for global alignment and also the algorithm for local alignment.\nWe will also later look at the algorithms and how they work, but for now, let us explore the applications.\nLet’s start with the explanations from NCBI BLAST\nLet’s say we want to find a pattern (sometimes referred to as a query or motif) in a sequence (mostly referred to as subject):\nPattern: CAGTTGC\nSubject: AGCTTCCAGTTGCTTTCTAG\nQuestion: Use the Pattern and Subject shown above, would you use local or global alignment to find the pattern in the subject?\nExercise: Copy and paste the above pattern and subject into any text editor, each on a new line. Use the spacebar to slide the pattern along the subject while paying attention to matching characters. Can you find the optimal alignment?\nIn the above exercise, the pattern is found exactly in the subject, this is not always the case, we can still do an optimum alignment in the case of substitutions and even insertions and deletions. Although exact matching algorithms are used in bioinformatics (like finding restriction sites), these will not work in most cases where we expect genetic variation.\nTask 1.1: Below you will see a picture numerically marked with alignment features.\nTask 1.2: What is peculiar or noteworthy about the 3 rd feature from the image of an alignment above? Anyone can count to 3, that is not what I am interested in. Why 3? I want you to speculate whether the section shown in the alignment is part of a coding or non-coding area of a gene. What would be the consequence if this feature was not a multiple of 3?"
+  },
+  {
+    "objectID": "alignment.html#local-vs-global",
+    "href": "alignment.html#local-vs-global",
+    "title": "Sequence alignment",
+    "section": "Local vs global",
+    "text": "Local vs global\nLocal alignment optimizes the best alignment between sections of the 2 sequences being aligned. Global alignments on the other hand try to optimize the alignment using all bases in both sequences and are generally used when aligning sequences of similar lengths.\nTask 1.3: For each of the following situations which method will you use, local or global? (3)\n\nYou have the sequences for all the chromosomes of a newly discovered plant and you want to find the chromosome harbouring a particular gene.\nThe lab gave you the 16s rDNA sequence, they already know it is from the genus Listeria, but you want to know exactly which specie it is and you have the 16s rDNA reference sequences for all the known species of Listeria.\nOne of your collaborators gave you a plasmid but did not tell you which antibiotic resistance gene it has for selective pressure. You have the sequences for the plasmid and the resistance genes of kanamycin, ampicillin and tetracycline. How would you figure this out? If you ask your collaborator this question, you will probably not collaborate again! Looking at the figure below, which do you think is global and which is local?\n\n\n\n\nLocal vs. global\n\n\nThere also exist hybrid alignments and various other more modern algorithms for sequence alignment, but we will discuss the classics."
+  },
+  {
+    "objectID": "alignment.html#practical-section",
+    "href": "alignment.html#practical-section",
+    "title": "Sequence alignment",
+    "section": "Practical section",
+    "text": "Practical section\n\nNeedleman-Wunsch (Global) vs Smith-Waterman (Local)\nRemember fasta format?\nLinks to local or global aligners\nHIV POL area\nHIV whole genome"
+  },
+  {
+    "objectID": "alignment.html#multiple-sequence-alignment",
+    "href": "alignment.html#multiple-sequence-alignment",
+    "title": "Sequence alignment",
+    "section": "Multiple sequence alignment",
+    "text": "Multiple sequence alignment\nFinding the culprit in an infection\nAbove we looked at pairwise alignment and talked a little bit about the different algorithms. Although pairwise alignments are very useful one often needs to align multiple sequences and we will look into that in more detail in future sections. Typical reasons for multiple sequence alignment include ‘universal’ primer design and phylogenetic.\nLet’s look at bacterial 16S rDNA identification.\nThe sequences\nOnline alignment servers"
   }
 ]

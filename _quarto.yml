@@ -9,7 +9,6 @@ website:
       - href: index.qmd
         text: Home
       - alignment.qmd
-      - about.qmd
 
 format:
   html:

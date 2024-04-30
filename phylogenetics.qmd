@@ -1,0 +1,11 @@
+---
+title: "A primer on phylogeny"
+---
+
+
+Before we get to phylogenetics let’s look at some iris data.  As with many other bioinformatic techniques, phylogenetics stems from older methods.  Hierarchical clustering is a form of unsupervised machine learning and unlike some of the other methods of this kind, you do not have to specify the number of clusters you want prior to the analysis.  The picture below illustrates what we will be looking at.
+
+![iris](media/iris-machinelearning.png)
+
+
+

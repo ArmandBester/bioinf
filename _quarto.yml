@@ -9,6 +9,7 @@ website:
       - href: index.qmd
         text: Home
       - alignment.qmd
+      - phylogenetics.qmd
 
 format:
   html:

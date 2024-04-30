@@ -177,6 +177,8 @@ Data:
 
 We will use this site for our analysis: [Phylogeny.fr](https://www.phylogeny.fr/alacarte.cgi)
 
+or newer [https://ngphylogeny.fr/workflows/alacarte](https://ngphylogeny.fr/workflows/alacarte)
+
 And we will use the ‘A la Carte’ mode and infer our unknown respiratory swab to infer a subtype of H and N.
 
 The easiest way to learn is to do.

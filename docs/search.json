@@ -74,6 +74,6 @@
     "href": "phylogenetics.html#methods",
     "title": "A primer on phylogeny",
     "section": "Methods:",
-    "text": "Methods:\nDisclaimer: It is important to note that this exercise is completely fictional and its purpose is to illustrate a concept.\nData:\nHA\nNA\nWe will use this site for our analysis: Phylogeny.fr\nAnd we will use the ‘A la Carte’ mode and infer our unknown respiratory swab to infer a subtype of H and N.\nThe easiest way to learn is to do.\nNext we will interpret the results to try and figure out the reassortment. Remember this example is contrived, but illustrates a use case for phylogenetic analysis."
+    "text": "Methods:\nDisclaimer: It is important to note that this exercise is completely fictional and its purpose is to illustrate a concept.\nData:\nHA\nNA\nWe will use this site for our analysis: Phylogeny.fr\nor newer https://ngphylogeny.fr/workflows/alacarte\nAnd we will use the ‘A la Carte’ mode and infer our unknown respiratory swab to infer a subtype of H and N.\nThe easiest way to learn is to do.\nNext we will interpret the results to try and figure out the reassortment. Remember this example is contrived, but illustrates a use case for phylogenetic analysis."
   }
 ]

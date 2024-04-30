@@ -60,6 +60,20 @@
     "href": "phylogenetics.html#influenza-practical-session",
     "title": "A primer on phylogeny",
     "section": "Influenza: Practical session",
-    "text": "Influenza: Practical session\nInfluenza A virus is a negative sense, single-stranded, segmented RNA virus. This Flu virus evolves through 2 mechanisms.\nGenetic Drift: This is the small changes in the genome where mutations occur within the segments.\nGenetic Shift: This is also sometimes called re-assortment and is typical of segmented viruses like influenza A, rotavirus, Crimean-Congo haemorrhagic fever virus and probably any segmented virus.\nThe table below illustrates the re-assortment potential of a zoonotic virus."
+    "text": "Influenza: Practical session\nInfluenza A virus is a negative sense, single-stranded, segmented RNA virus. This Flu virus evolves through 2 mechanisms.\nGenetic Drift: This is the small changes in the genome where mutations occur within the segments.\nGenetic Shift: This is also sometimes called re-assortment and is typical of segmented viruses like influenza A, rotavirus, Crimean-Congo haemorrhagic fever virus and probably any segmented virus.\nThe figure below illustrates the re-assortment potential of a zoonotic virus. paper\n\n\n\nGoneau et al. 2018\n\n\nThe image below illustrates the H7N9 virus found in China in 2013.\n\n\n\nGoneau et al. 2018\n\n\nBelow illustrates the re-assortments for some of the pandemics.\n\n\n\nGoneau et al. 2018\n\n\nA video from The WHO\n\n\nA very interesting TED talk"
+  },
+  {
+    "objectID": "phylogenetics.html#practical",
+    "href": "phylogenetics.html#practical",
+    "title": "A primer on phylogeny",
+    "section": "Practical",
+    "text": "Practical\nBackground: In 2013 a novel influenza A virus which infects humans was identified in China. Liu et al (2013) published the work in The Lancet.\nPaper\nWe will do something similar, but more obvious. Looking at the tables above showing the hemagglutinin and neuraminidase we see for example that H1 and N1 can be found in humans, birds and pigs. Now imagine genetic drift in these segments in their respective hosts. These segments could have diverged from the ‘wild type’ quite significantly in order to escape immune pressure. Let’s say we now get intra-subtype re-assortment, these segments can be so different that they can evade vaccine-acquired immunity and cause a pandemic."
+  },
+  {
+    "objectID": "phylogenetics.html#methods",
+    "href": "phylogenetics.html#methods",
+    "title": "A primer on phylogeny",
+    "section": "Methods:",
+    "text": "Methods:\nDisclaimer: It is important to note that this exercise is completely fictional and its purpose is to illustrate a concept.\nData:\nHA\nNA\nWe will use this site for our analysis: Phylogeny.fr\nAnd we will use the ‘A la Carte’ mode and infer our unknown respiratory swab to infer a subtype of H and N.\nThe easiest way to learn is to do.\nNext we will interpret the results to try and figure out the reassortment. Remember this example is contrived, but illustrates a use case for phylogenetic analysis."
   }
 ]

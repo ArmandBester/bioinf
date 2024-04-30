@@ -111,6 +111,8 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#phylogenetics" id="toc-phylogenetics" class="nav-link active" data-scroll-target="#phylogenetics">Phylogenetics</a></li>
   <li><a href="#influenza-practical-session" id="toc-influenza-practical-session" class="nav-link" data-scroll-target="#influenza-practical-session">Influenza: Practical session</a></li>
+  <li><a href="#practical" id="toc-practical" class="nav-link" data-scroll-target="#practical">Practical</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods:</a></li>
   </ul>
 </nav>
     </div>
@@ -231,7 +233,50 @@ ul.task-list li input[type="checkbox"] {
 <p>Influenza A virus is a negative sense, single-stranded, segmented RNA virus. This Flu virus evolves through 2 mechanisms.</p>
 <p>Genetic Drift: This is the small changes in the genome where mutations occur within the segments.</p>
 <p>Genetic Shift: This is also sometimes called re-assortment and is typical of segmented viruses like influenza A, rotavirus, Crimean-Congo haemorrhagic fever virus and probably any segmented virus.</p>
-<p>The table below illustrates the re-assortment potential of a zoonotic virus.</p>
+<p>The figure below illustrates the re-assortment potential of a zoonotic virus. <a href="https://link.springer.com/article/10.1007/s11908-018-0642-9">paper</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs11908-018-0642-9/MediaObjects/11908_2018_642_Fig1_HTML.png?as=webp" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Goneau et al.&nbsp;2018</figcaption>
+</figure>
+</div>
+<p>The image below illustrates the H7N9 virus found in China in 2013.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs11908-018-0642-9/MediaObjects/11908_2018_642_Fig2_HTML.png?as=webp" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Goneau et al.&nbsp;2018</figcaption>
+</figure>
+</div>
+<p>Below illustrates the re-assortments for some of the pandemics.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs11908-018-0642-9/MediaObjects/11908_2018_642_Fig3_HTML.png?as=webp" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Goneau et al.&nbsp;2018</figcaption>
+</figure>
+</div>
+<p>A video from The WHO</p>
+<iframe width="775" height="300" src="https://www.youtube.com/embed/mn710cT4xxs" title="What is influenza?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<p>A very interesting TED talk</p>
+<iframe width="775" height="300" src="https://www.youtube.com/embed/nncPtxLCPrE" title="Seth Berkley: HIV and flu -- the vaccine strategy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+</section>
+<section id="practical" class="level2">
+<h2 class="anchored" data-anchor-id="practical">Practical</h2>
+<p>Background: In 2013 a novel influenza A virus which infects humans was identified in China. Liu et al (2013) published the work in The Lancet.</p>
+<p><a href="https://www.sciencedirect.com/science/article/abs/pii/S0140673613609381">Paper</a></p>
+<p>We will do something similar, but more obvious. Looking at the tables above showing the hemagglutinin and neuraminidase we see for example that H1 and N1 can be found in humans, birds and pigs. Now imagine genetic drift in these segments in their respective hosts. These segments could have diverged from the ‘wild type’ quite significantly in order to escape immune pressure. Let’s say we now get intra-subtype re-assortment, these segments can be so different that they can evade vaccine-acquired immunity and cause a pandemic.</p>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods:</h2>
+<p>Disclaimer: It is important to note that this exercise is completely fictional and its purpose is to illustrate a concept.</p>
+<p>Data:</p>
+<p><a href="data/HA_85_nr.faa">HA</a></p>
+<p><a href="data/NA_85_nr.faa">NA</a></p>
+<p>We will use this site for our analysis: <a href="https://www.phylogeny.fr/alacarte.cgi">Phylogeny.fr</a></p>
+<p>And we will use the ‘A la Carte’ mode and infer our unknown respiratory swab to infer a subtype of H and N.</p>
+<p>The easiest way to learn is to do.</p>
+<p>Next we will interpret the results to try and figure out the reassortment. Remember this example is contrived, but illustrates a use case for phylogenetic analysis.</p>
 
 
 </section>

@@ -82,17 +82,58 @@ circlize_dendrogram(iris_dend)
 ```
 
 
+We can see from the above image that we mostly managed to correctly cluster the iris species.
+
+## Phylogenetics
+
+
+I am borrowing HEAVILY from the link below and I would encourage you to have a look yourself.
+
+[https://www.ebi.ac.uk/training/online/course/introduction-phylogenetics](https://www.ebi.ac.uk/training/online/course/introduction-phylogenetics)
+
+You can also go over to EMBL-EBI Training website [https://www.ebi.ac.uk/training/](https://www.ebi.ac.uk/training/) for other free training opportunities as well. Maybe have a look at this introduction video 
+
+<iframe width="775" height="299" src="https://www.youtube.com/embed/Rwrw28hQMfE" title="EMBL-EBI: the home of big data in biology" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+#### ... what is phylogenetics
 
 
 
+![What is phylogenetics](media/phylo1.png)
 
 
 
+If you recall from the previous installment of the course we looked at multiple sequence alignment and distance matrices.  Like with our flowers in the above sections, we can use a multiple sequence alignment to calculate distance matrices and infer phylogenetic relationships.
+
+Typically phylogeneticists study one of the following types of question:
+• What are the evolutionary relationships or histories among my species/individuals/genes of interest?
+• How do sequences evolve?
+• Can I better describe processes of sequence evolution with a mathematical model?
 
 
+#### ... Why phylogenetics
 
+![why phylogenetics](media/phylogenetics1-530x510.png)
 
+[https://www.ebi.ac.uk/training/online/course/introduction-phylogenetics/why-phylogenetics-important](https://www.ebi.ac.uk/training/online/course/introduction-phylogenetics/why-phylogenetics-important)
 
+As we can see from the images below, a ‘tree of life’ is an old idea long before the discovery of DNA in 1950 and the first DNA sequence in 1970.
+
+![Ernst Haeckel and Charles Darwin](media/old_trees.png)
+
+The field of phylogenetic analysis is a broad one with various methods and models.  Most researchers look at methods and models already used by those before them and learn what they need to know on a need-to-know basis.  Also if we would like to look at this topic in depth, I would rather call in an expert to present it.  A nice book on the topic is: The Phylogenetic Handbook: A Practical Approach to Phylogenetic Analysis and Hypothesis Testing.  ISBN-13: 978-0521730716
+
+Let’s rather apply this technique to solving a pending real word disaster.
+
+## Influenza:  Practical session
+
+Influenza A virus is a negative sense, single-stranded, segmented RNA virus.  This Flu virus evolves through 2 mechanisms.
+
+Genetic Drift:  This is the small changes in the genome where mutations occur within the segments.
+
+Genetic Shift:  This is also sometimes called re-assortment and is typical of segmented viruses like influenza A, rotavirus, Crimean-Congo haemorrhagic fever virus and probably any segmented virus.
+
+The table below illustrates the re-assortment potential of a zoonotic virus.
 
 
 

@@ -7,5 +7,53 @@ Before we get to phylogenetics let’s look at some iris data.  As with many oth
 
 ![iris](media/iris-machinelearning.png)
 
+The ‘iris’ dataset is quite famous and is used in many books and tutorials on machine learning.   https://en.wikipedia.org/wiki/Iris_flower_data_set
+
+The data set consists of four different attributes, namely:  sepal length, sepal width, petal length and petal width (all measured in cm).  There are 50 observations for each class and they are like in the image above, versicolor, setosa and virginica.
+
+I could show you the data, but let’s rather look at some fun plots.
+
+```{r}
+library(GGally)
+data("iris")
+head(iris, 2)
+
+ggpairs(iris, columns = 1:4, aes(colour = Species))
+```
+
+
+The pairs plotted above plot each attribute or variable against each.  Why would this be useful?
+
+
+From the above plot, it is now clear that petal length and width are the attributes which are most discriminating between the 3 different flower species.  So if we would like to group these into clusters based on their attributes the above-mentioned would do the best job.  Also, remember that the attributes are measured in cm which means that we can use this numeric data to construct a distance matrix.  Once we have a distance matrix we can create a dendrogram.  So how would we calculate the distance between observations?  Remember we have 150 observations, 50 of each specie.  We would like to calculate the distance of each observation against each.  If you now think about that, if we plot these distances, they should form clusters.
+
+How do we calculate distances?  Remember Pythagoras’s theorem?
+
+![Pythagoras](media/pyth.png)
+
+Or do you remember getting the distance between two points on a cartesian coordinate system, the image below should help.
+
+![cartesian](media/Euclidean_distance-300x240.png)
+So how do we calculate the distance (d) between points (x1, y1) and (x2,y2)?
+
+![euclidean](media/euclidean_eq.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -65,7 +65,7 @@ We will be working with sequencing data again in the coming lectures, but while 
 
 [Also check out their Learning section](https://ugene.net/learn.html) and their [videos](https://ugene.net/podcast.html)
 
-We can use this software to Assembles the traces and generate a consensus sequence.
+We can use this software to Assemble the traces and generate a consensus sequence.
 
 
 

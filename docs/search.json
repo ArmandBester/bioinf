@@ -7,11 +7,11 @@
     "text": "With the rapid development in sequencing technology, this field has almost become synonymous with next-generation sequencing data analysis, however, this is not the case. ‘Bio-informatics’ is a sub-branch of informatics which is the analysis of data or information which is then applied to solving problems, deriving conclusions or making predictions. Think of sentiment analysis from social media platforms to determine what people are thinking and feeling about an organization. As an example of this, in 2014 sentiment analysis was used to determine what people are thinking about the personalized genomics company, 23andMe. You can download the report here. The authors of this presentation collected Twitter feeds (tweets) for one week to determine how people are feeling about this company and what were the general reasons for interest.\nSimilarly, bioinformatics uses information generated from a biological context as data or information for analysis. As you can realize that is extremely broad! Solving the crystal structure of an enzyme using X-ray crystallography is quite different from analyzing a novel metabolic pathway.\nHave a look at this publication.\nHowever, this blog, will mostly deal with nucleic sequence analysis and introduce you to the very basics."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "phylogenetics.html",
+    "href": "phylogenetics.html",
+    "title": "A primer on phylogeny",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Before we get to phylogenetics let’s look at some iris data. As with many other bioinformatic techniques, phylogenetics stems from older methods. Hierarchical clustering is a form of unsupervised machine learning and unlike some of the other methods of this kind, you do not have to specify the number of clusters you want prior to the analysis. The picture below illustrates what we will be looking at.\n\n\n\niris"
   },
   {
     "objectID": "alignment.html",
@@ -40,5 +40,12 @@
     "title": "Sequence alignment",
     "section": "Multiple sequence alignment",
     "text": "Multiple sequence alignment\nFinding the culprit in an infection\nAbove we looked at pairwise alignment and talked a little bit about the different algorithms. Although pairwise alignments are very useful one often needs to align multiple sequences and we will look into that in more detail in future sections. Typical reasons for multiple sequence alignment include ‘universal’ primer design and phylogenetic.\nLet’s look at bacterial 16S rDNA identification.\nThe sequences\nOnline alignment servers"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
   }
 ]

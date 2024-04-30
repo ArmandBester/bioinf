@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction into bioinformatics tools - What is bioinfomatics?</title>
+<title>Introduction into bioinformatics tools - Sanger Sequencing Theory and Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,11 +82,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./sanger.html" rel="" target="">
+    <a class="nav-link active" href="./sanger.html" rel="" target="" aria-current="page">
  <span class="menu-text">Sanger Sequencing Theory and Data</span></a>
   </li>  
   <li class="nav-item">
@@ -109,14 +109,21 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#theory" id="toc-theory" class="nav-link active" data-scroll-target="#theory">Theory</a></li>
+  <li><a href="#hands-on-with-data" id="toc-hands-on-with-data" class="nav-link" data-scroll-target="#hands-on-with-data">Hands-on with data</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">What is bioinfomatics?</h1>
+<h1 class="title">Sanger Sequencing Theory and Data</h1>
 </div>
 
 
@@ -131,12 +138,62 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>With the rapid development in sequencing technology, this field has almost become synonymous with next-generation sequencing data analysis, however, this is not the case. ‘Bio-informatics’ is a sub-branch of informatics which is the analysis of data or information which is then applied to solving problems, deriving conclusions or making predictions. Think of sentiment analysis from social media platforms to determine what people are thinking and feeling about an organization. As an example of this, in 2014 sentiment analysis was used to determine what people are thinking about the personalized genomics company, 23andMe. You can download the report <a href="https://vdeb.ern.ufs.ac.za/media/Alberto_Lusoli_ICA-2017.pdf">here</a>. The authors of this presentation collected Twitter feeds (tweets) for one week to determine how people are feeling about this company and what were the general reasons for interest.</p>
-<p>Similarly, bioinformatics uses information generated from a biological context as data or information for analysis. As you can realize that is extremely broad! Solving the crystal structure of an enzyme using X-ray crystallography is quite different from analyzing a novel metabolic pathway.</p>
-<p>Have a look at <a href="https://pubmed.ncbi.nlm.nih.gov/11552348/">this</a> publication.</p>
-<p>However, this blog, will mostly deal with nucleic sequence analysis and introduce you to the very basics.</p>
+<section id="theory" class="level2">
+<h2 class="anchored" data-anchor-id="theory">Theory</h2>
+<p>This method of DNA sequencing is the brainchild of Fredric Sanger (hence the name of the method). It will really help if you already understand PCR (Polymerase Chain Reaction). If you don’t, stop here and get back to that first.</p>
+<p>The whole principle behind Sanger sequencing:</p>
+<ul>
+<li><p>randomly terminate the elongation of a primer bound to a complementary target sequence(this is where knowledge of PCR comes in handy)</p></li>
+<li><p>separate them all by one base resolution</p></li>
+<li><p>determine the last nucleotide added to the strand, detecting</p></li>
+</ul>
+<p><strong>Terminating</strong></p>
+<p>Think of the Comrades Marathon, if we can determine the order in which the competitors pass the FINISH point a news reporter might say “The first 4 competitors finished the race in the following <em>sequence</em>: A, C, T, G”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/dideoxy02.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">http://www.mikeblaber.org/oldwine/BCH4053/Lecture20/Lecture20.htm</figcaption>
+</figure>
+</div>
+<p>So knowing the principle of PCR, we know that polymerization happens from the 5` -end to the 3`-end. The 5` position of the deoxyribose contains a triphosphate group (moiety) which both provides the energy and the capability to form a phosphodiester bond with the preceding 3` hydroxyl group of DNA strand being extended. Thus, that is why the direction is 5` to 3`. What will happen if we did not have 3` hydroxyl on the newly added (polymerized) nucleotide? Will we be able to continue adding nucleotides? No!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/deoxy.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">https://www.ocf.berkeley.edu/~edy/genome/sequencing.html</figcaption>
+</figure>
+</div>
+<p>If we remove the red circled hydroxyl from the above picture, we have a dideoxynucleotide or ddNTP.</p>
+<p>Thinking about it, it is no wonder that this method is also sometimes referred to as the Chain Termination Method of sequencing.</p>
+<p>Unlike PCR, we are just elongating one primer at a time and it is not an exponential increase in product as with PCR. If we have a mixture of dNTPs and ddNTPs, such that we will terminate the reaction randomly at each position we are one step closer in determining the sequence.</p>
+<p>What if we can sort them from smallest to largest and determine what the last base was?</p>
+<p><strong>Sorting</strong></p>
+<p>Our termination product has a sugar/phosphate backbone (like normal DNA or RNA). The key here is that the phosphate groups are negatively charged at an alkaline pH. If we subject our Chain termination product to an electrical field, these molecules/polymers will move in that field. If we further provide an ‘obstacle’ course which lets these polymers migrate faster based on their size, the smallest first, we will achieve sorting.</p>
+<p><strong>Detecting</strong></p>
+<p>So far we can randomly generate the DNA termination fragments, and sort them from shortest to longest, but we still don’t know the ‘identity’ of the terminating base. These days each ddATP, ddCTP, ddGTP and ddTTP has a fluorophore bound to it emitting a different wavelength of light when excited by a laser. If you then have a camera detecting these colours, you can finally determine the sequence. How would this work if you did not have different colours and had to use something like radioactivity?</p>
+<p>I have included a video you can watch.</p>
+<iframe width="775" height="300" src="https://www.youtube.com/embed/e2G5zx-OJIw" title="How does Sanger Sequencing Work? – Seq It Out #1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<ul>
+<li><p>Who can tell me what is wrong with the video?</p></li>
+<li><p>What kind of questions can we answer with Sanger Sequencing?</p></li>
+</ul>
+</section>
+<section id="hands-on-with-data" class="level2">
+<h2 class="anchored" data-anchor-id="hands-on-with-data">Hands-on with data</h2>
+<p>We will be working with sequencing data again in the coming lectures, but while we are busy with the topic, let’s have a look at the practical application thereof. We were commissioned by the Provincial Polony Police to investigate a factory with suspicious practices. We did genomic DNA extraction on raw materials from different sites in the factory. We used universal primers to amplify the 16s rDNA gene from the genomic DNA we isolated. If we do get a PCR product it tells us there is bacterial contamination in the site, but it does not tell us which bacteria. We cloned these PCR products into a plasmid and sequenced various clones.</p>
+<p><a href="data/Sequencing.zip">The trace files</a></p>
+<p><a href="https://ugene.net">Free and good software you can use</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://ugene.net/assets/images/3dstruct.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">UGENE</figcaption>
+</figure>
+</div>
+<p><a href="https://ugene.net/learn.html">Also check out their Learning section</a> and their <a href="https://ugene.net/podcast.html">videos</a></p>
+<p>We can use this software to Assembles the traces and generate a consensus sequence.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -1,0 +1,71 @@
+---
+title: "Sanger Sequencing Theory and Data"
+---
+
+## Theory
+
+This method of DNA sequencing is the brainchild of Fredric Sanger (hence the name of the method). It will really help if you already understand PCR (Polymerase Chain Reaction). If you don’t, stop here and get back to that first.
+
+The whole principle behind Sanger sequencing:
+
+-   randomly terminate the elongation of a primer bound to a complementary target sequence(this is where knowledge of PCR comes in handy)
+
+-   separate them all by one base resolution
+
+-   determine the last nucleotide added to the strand, detecting
+
+**Terminating**
+
+Think of the Comrades Marathon, if we can determine the order in which the competitors pass the FINISH point a news reporter might say “The first 4 competitors finished the race in the following *sequence*: A, C, T, G”.
+
+![http://www.mikeblaber.org/oldwine/BCH4053/Lecture20/Lecture20.htm](media/dideoxy02.jpg)
+
+So knowing the principle of PCR, we know that polymerization happens from the 5\` -end to the 3\`-end.  The 5\` position of the deoxyribose contains a triphosphate group (moiety) which both provides the energy and the capability to form a phosphodiester bond with the preceding  3\` hydroxyl group of DNA strand being extended.  Thus, that is why the direction is 5\` to 3\`.  What will happen if we did not have 3` hydroxyl on the newly added (polymerized) nucleotide?  Will we be able to continue adding nucleotides?  No!
+
+![https://www.ocf.berkeley.edu/~edy/genome/sequencing.html](media/deoxy.jpg)
+
+
+If we remove the red circled hydroxyl from the above picture, we have a dideoxynucleotide or ddNTP.
+
+Thinking about it, it is no wonder that this method is also sometimes referred to as the Chain Termination Method of sequencing.
+
+Unlike PCR, we are just elongating one primer at a time and it is not an exponential increase in product as with PCR. If we have a mixture of dNTPs and ddNTPs, such that we will terminate the reaction randomly at each position we are one step closer in determining the sequence.
+
+What if we can sort them from smallest to largest and determine what the last base was?
+
+
+**Sorting**
+
+Our termination product has a sugar/phosphate backbone (like normal DNA or RNA).  The key here is that the phosphate groups are negatively charged at an alkaline pH.  If we subject our Chain termination product to an electrical field, these molecules/polymers will move in that field.  If we further provide an ‘obstacle’ course which lets these polymers migrate faster based on their size, the smallest first, we will achieve sorting.
+
+**Detecting**
+
+So far we can randomly generate the DNA termination fragments, and sort them from shortest to longest, but we still don’t know the ‘identity’ of the terminating base.  These days each ddATP, ddCTP, ddGTP and ddTTP has a fluorophore bound to it emitting a different wavelength of light when excited by a laser.  If you then have a camera detecting these colours, you can finally determine the sequence.  How would this work if you did not have different colours and had to use something like radioactivity?
+
+I have included a video you can watch.
+
+<iframe width="775" height="300" src="https://www.youtube.com/embed/e2G5zx-OJIw" title="How does Sanger Sequencing Work? – Seq It Out #1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+- Who can tell me what is wrong with the video?
+
+- What kind of questions can we answer with Sanger Sequencing?
+
+
+## Hands-on with data
+
+We will be working with sequencing data again in the coming lectures, but while we are busy with the topic, let’s have a look at the practical application thereof.  We were commissioned by the Provincial Polony Police to investigate a factory with suspicious practices.  We did genomic DNA extraction on raw materials from different sites in the factory.  We used universal primers to amplify the 16s rDNA gene from the genomic DNA we isolated.  If we do get a PCR product it tells us there is bacterial contamination in the site, but it does not tell us which bacteria.  We cloned these PCR products into a plasmid and sequenced various clones.
+
+
+[The trace files](data/Sequencing.zip)
+
+
+[Free and good software you can use](https://ugene.net)
+
+![UGENE](https://ugene.net/assets/images/3dstruct.png)
+
+[Also check out their Learning section](https://ugene.net/learn.html) and their [videos](https://ugene.net/podcast.html)
+
+We can use this software to Assembles the traces and generate a consensus sequence.
+
+
+

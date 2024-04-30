@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.361">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Introduction into bioinformatics tools - Sequence alignment</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Introduction into bioinformatics tools</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./sanger.html" rel="" target="">
+ <span class="menu-text">Sanger Sequencing Theory and Data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./alignment.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Sequence alignment</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./phylogenetics.html" rel="" target="">
+ <span class="menu-text">A primer on phylogeny</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#local-vs-global" id="toc-local-vs-global" class="nav-link active" data-scroll-target="#local-vs-global">Local vs global</a></li>
+  <li><a href="#practical-section" id="toc-practical-section" class="nav-link" data-scroll-target="#practical-section">Practical section</a>
+  <ul class="collapse">
+  <li><a href="#needleman-wunsch-global-vs-smith-waterman-local" id="toc-needleman-wunsch-global-vs-smith-waterman-local" class="nav-link" data-scroll-target="#needleman-wunsch-global-vs-smith-waterman-local">Needleman-Wunsch (Global) vs Smith-Waterman (Local)</a></li>
+  </ul></li>
+  <li><a href="#multiple-sequence-alignment" id="toc-multiple-sequence-alignment" class="nav-link" data-scroll-target="#multiple-sequence-alignment">Multiple sequence alignment</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sequence alignment</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>In this section, we will look at sequence alignments. We will look at the Needleman-Wunch algorithm for global alignment and also the algorithm for local alignment.</p>
+<p>We will also later look at the algorithms and how they work, but for now, let us explore the applications.</p>
+<p>Let’s start with the explanations from <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&amp;PROG_DEF=blastn&amp;BLAST_PROG_DEF=blastn&amp;BLAST_SPEC=GlobalAln&amp;LINK_LOC=BlastHomeLink">NCBI BLAST</a></p>
+<blockquote class="blockquote">
+<p>Alignments may be classified as either global or local. A global alignment aligns two sequences from beginning to end, aligning each letter in each sequence only once. An alignment is produced, regardless of whether or not there is similarity between the sequences. A local alignment can also be used to align two sequences, but will only align those portions of the sequences that share similarity. If there is no similarity, no alignment will be returned. Local alignments algorithms (such as BLAST) are most often used. A global alignment should only be used on sequences that share significant similarity over most of their extents, and then it will sometimes return a better presentation. An example is the alignment of NP_004013 with NP_004014. These are both dystrophin isoforms, but the first sequence is missing about 100 residues starting at residue 948 (some exons have been spliced out of the corresponding mRNA). A global algorithm returns one alignment clearly showing the difference, a local algorithm returns two alignments, and it is difficult to see the change between the sequences. The global alignment at this page uses the Needleman-Wunsch algorithm. The algorithm also has optimizations to reduce memory usage.</p>
+</blockquote>
+<p>Let’s say we want to find a pattern (sometimes referred to as a query or motif) in a sequence (mostly referred to as subject):</p>
+<p>Pattern: CAGTTGC</p>
+<p>Subject: AGCTTCCAGTTGCTTTCTAG</p>
+<p>Question: Use the Pattern and Subject shown above, would you use local or global alignment to find the pattern in the subject?</p>
+<p><strong>Exercise:</strong> Copy and paste the above pattern and subject into any text editor, each on a new line. Use the spacebar to slide the pattern along the subject while paying attention to matching characters. Can you find the optimal alignment?</p>
+<p>In the above exercise, the pattern is found exactly in the subject, this is not always the case, we can still do an optimum alignment in the case of substitutions and even insertions and deletions. Although exact matching algorithms are used in bioinformatics (like finding restriction sites), these will not work in most cases where we expect genetic variation.</p>
+<p><strong>Task 1.1:</strong> Below you will see a picture numerically marked with alignment features.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/SubIndelAno-300x32.png" class="img-fluid figure-img" width="600"></p>
+<figcaption class="figure-caption">Alingment</figcaption>
+</figure>
+</div>
+<ul>
+<li>1 Single Nucleotide Polymorphism</li>
+<li>2 Single Nucleotide Polymorphism</li>
+<li>3 Deletion or insertion / InDel</li>
+</ul>
+<p><strong>Task 1.2:</strong> What is peculiar or noteworthy about the 3 rd feature from the image of an alignment above? Anyone can count to 3, that is not what I am interested in. Why 3? I want you to speculate whether the section shown in the alignment is part of a coding or non-coding area of a gene. What would be the consequence if this feature was not a multiple of 3?</p>
+<section id="local-vs-global" class="level2">
+<h2 class="anchored" data-anchor-id="local-vs-global">Local vs global</h2>
+<p>Local alignment optimizes the best alignment between sections of the 2 sequences being aligned. Global alignments on the other hand try to optimize the alignment using all bases in both sequences and are generally used when aligning sequences of similar lengths.</p>
+<p>Task 1.3: For each of the following situations which method will you use, local or global? (3)</p>
+<ol type="a">
+<li>You have the sequences for all the chromosomes of a newly discovered plant and you want to find the chromosome harbouring a particular gene.</li>
+<li>The lab gave you the 16s rDNA sequence, they already know it is from the genus Listeria, but you want to know exactly which specie it is and you have the 16s rDNA reference sequences for all the known species of Listeria.</li>
+<li>One of your collaborators gave you a plasmid but did not tell you which antibiotic resistance gene it has for selective pressure. You have the sequences for the plasmid and the resistance genes of kanamycin, ampicillin and tetracycline. How would you figure this out? If you ask your collaborator this question, you will probably not collaborate again! Looking at the figure below, which do you think is global and which is local?</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/global_vs_local.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Local vs.&nbsp;global</figcaption>
+</figure>
+</div>
+<p>There also exist hybrid alignments and various other more modern algorithms for sequence alignment, but we will discuss the classics.</p>
+</section>
+<section id="practical-section" class="level2">
+<h2 class="anchored" data-anchor-id="practical-section">Practical section</h2>
+<section id="needleman-wunsch-global-vs-smith-waterman-local" class="level3">
+<h3 class="anchored" data-anchor-id="needleman-wunsch-global-vs-smith-waterman-local">Needleman-Wunsch (Global) vs Smith-Waterman (Local)</h3>
+<p>Remember fasta format?</p>
+<p>Links to <a href="https://www.ebi.ac.uk/jdispatcher/psa/emboss_water">local</a> or <a href="https://www.ebi.ac.uk/jdispatcher/psa/emboss_needle">global</a> aligners</p>
+<p><a href="media/hiv-pol.fasta">HIV POL area</a></p>
+<p><a href="media/hiv-full.fasta">HIV whole genome</a></p>
+</section>
+</section>
+<section id="multiple-sequence-alignment" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-sequence-alignment">Multiple sequence alignment</h2>
+<p><strong>Finding the culprit in an infection</strong></p>
+<p>Above we looked at pairwise alignment and talked a little bit about the different algorithms. Although pairwise alignments are very useful one often needs to align multiple sequences and we will look into that in more detail in future sections. Typical reasons for multiple sequence alignment include ‘universal’ primer design and phylogenetic.</p>
+<p>Let’s look at bacterial 16S rDNA identification.</p>
+<p><a href="media/bact_16S.fasta">The sequences</a></p>
+<p><a href="https://www.ebi.ac.uk/jdispatcher/msa">Online alignment servers</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

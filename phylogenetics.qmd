@@ -87,6 +87,14 @@ We can see from the above image that we mostly managed to correctly cluster the 
 
 ## Phylogenetics
 
+Phylogenetics really is a specialist field. I want you to consider two very dramatic cases involving phylogenetics. In 1992 there was a case against a dentist from Florida allegedly infecting six patients with HIV. [You can read more here](https://www.sciencedirect.com/science/article/pii/S1684118220300025). Arguably even more impressive and dramatic is the case against six healthcare workers in Libya who were accused of infecting children with HIV in the hospital. They were sentenced to death, but some very clever people used phylogenetics to prove that not to be the case. These people were eventually freed.
+
+[Paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC411127/#:~:text=Six%20foreign%20health%20workers%20have,to%20death%20by%20firing%20squad.)
+
+[Paper](https://www.nature.com/articles/448992a)
+
+[News](https://krisp.org.za/news.php?id=10)
+
 
 I am borrowing HEAVILY from the link below and I would encourage you to have a look yourself.
 

@@ -11,6 +11,7 @@ website:
       - sanger.qmd
       - alignment.qmd
       - phylogenetics.qmd
+      - qPCR_presentation.ipynb
 
 format:
   html:

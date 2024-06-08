@@ -96,5 +96,110 @@
     "title": "What is bioinfomatics?",
     "section": "",
     "text": "With the rapid development in sequencing technology, this field has almost become synonymous with next-generation sequencing data analysis, however, this is not the case. ‘Bio-informatics’ is a sub-branch of informatics which is the analysis of data or information which is then applied to solving problems, deriving conclusions or making predictions. Think of sentiment analysis from social media platforms to determine what people are thinking and feeling about an organization. As an example of this, in 2014 sentiment analysis was used to determine what people are thinking about the personalized genomics company, 23andMe. You can download the report here. The authors of this presentation collected Twitter feeds (tweets) for one week to determine how people are feeling about this company and what were the general reasons for interest.\nSimilarly, bioinformatics uses information generated from a biological context as data or information for analysis. As you can realize that is extremely broad! Solving the crystal structure of an enzyme using X-ray crystallography is quite different from analyzing a novel metabolic pathway.\nHave a look at this publication.\nHowever, this blog, will mostly deal with nucleic sequence analysis and introduce you to the very basics."
+  },
+  {
+    "objectID": "qPCR_presentation.html#introduction",
+    "href": "qPCR_presentation.html#introduction",
+    "title": "Quantitative or Real-Time Polymerase Chain Reactions",
+    "section": "Introduction",
+    "text": "Introduction\n\nOverview of PCR (Polymerase Chain Reaction)\n\nComponents\n\nDNA template\n\nWhat if the target is RNA (HIV, SARS-CoV2 …)\n\nPrior cDNA synthesis using RNA-dependent DNA polymerase\n\n\nPrimers flanking the area of interest\ndNTPs (Deoxynucleoside triphosphates) serve as building blocks\nThermostable DNA polymerase (DNA dependant DNA polymerase)\nCo-factors \\(Mg^{2+}\\) or \\(Mn^{2+}\\)"
+  },
+  {
+    "objectID": "qPCR_presentation.html#introduction-1",
+    "href": "qPCR_presentation.html#introduction-1",
+    "title": "Quantitative or Real-Time Polymerase Chain Reactions",
+    "section": "… Introduction",
+    "text": "… Introduction\n\nOverview of PCR\n\nCycles aka heating & cooling & heating …\n\n\n\nPCR cycles"
+  },
+  {
+    "objectID": "qPCR_presentation.html#introduction-2",
+    "href": "qPCR_presentation.html#introduction-2",
+    "title": "Quantitative or Real-Time Polymerase Chain Reactions",
+    "section": "… Introduction",
+    "text": "… Introduction\n\nGel electrophoresis\n\nNegatively charged DNA moves in electric current\nSmaller fragments migrate faster\n\nGel gets stained with DNA intercalating dye and viewed under UV or blue light\n\ndsDNA-dye complex is excited by a light source and fluoresces\nThis is then documented with a camera"
+  },
+  {
+    "objectID": "qPCR_presentation.html#real-time-pcr-qpcr",
+    "href": "qPCR_presentation.html#real-time-pcr-qpcr",
+    "title": "Quantitative or Real-Time Polymerase Chain Reactions",
+    "section": "Real-Time PCR, qPCR",
+    "text": "Real-Time PCR, qPCR\n\nSame prinsiple as PCR\n\nAdditionally requires something to track the reaction in Real Time\nRT-PCR can also refer to reverse transcription polymerase chain reaction\n\nwhich leads to RT-RT-PCR\nRT-qPCR is less confusing"
+  },
+  {
+    "objectID": "qPCR_presentation.html#simple-matchematics-of-pcr",
+    "href": "qPCR_presentation.html#simple-matchematics-of-pcr",
+    "title": "Quantitative or Real-Time Polymerase Chain Reactions",
+    "section": "Simple matchematics of PCR",
+    "text": "Simple matchematics of PCR\n\nIf the reaction is 100% efficient and we start with 1 molecule of target/template DNA\n\nAfter cycle 1 we have 2 copies\nAfter cycle 2 we have 4 copies\nAfter cycle 3 we have 8 copies\nAfter cycle 4 we have 16 copies\nAfter cycle 5 we have 32 copies\nAfter cycle 6 we have 64 copies\nAfter cycle 30 we have 1,073,741,824 copies\n\nOr \\(2^{number\\ of\\ cycles}\\)"
+  },
+  {
+    "objectID": "qPCR_presentation.html#sybr-green",
+    "href": "qPCR_presentation.html#sybr-green",
+    "title": "Quantitative or Real-Time Polymerase Chain Reactions",
+    "section": "SYBR Green",
+    "text": "SYBR Green\n\n\n\nds-DNA binding dye\n\nIntercelates non-specifically\nBinding to dsDNA increases fluorescence\nThus enables tracking of DNA replication\nSince primer dimer will also cause fluorescence it requires a melting curve to confirm the target’s presence"
+  },
+  {
+    "objectID": "qPCR_presentation.html#taqman-probes",
+    "href": "qPCR_presentation.html#taqman-probes",
+    "title": "Quantitative or Real-Time Polymerase Chain Reactions",
+    "section": "TaqMan probes",
+    "text": "TaqMan probes\n\n\n\nSpecific probes\n\nMore specificity\n\nApart from 2 primers binding requires an additional probe\nDoes not require a melting curve"
+  },
+  {
+    "objectID": "qPCR_presentation.html#other-proprietary-techniques",
+    "href": "qPCR_presentation.html#other-proprietary-techniques",
+    "title": "Quantitative or Real-Time Polymerase Chain Reactions",
+    "section": "Other proprietary techniques",
+    "text": "Other proprietary techniques\n\nOne example"
+  },
+  {
+    "objectID": "qPCR_presentation.html#the-mathematics-of-qpcr",
+    "href": "qPCR_presentation.html#the-mathematics-of-qpcr",
+    "title": "Quantitative or Real-Time Polymerase Chain Reactions",
+    "section": "The mathematics of qPCR",
+    "text": "The mathematics of qPCR\n\\[\nF_0 = \\frac{ F_{max} } {1 + e^{( (C_{0.5} - C) /k)}  } + F_b\n\\]\n\n\\(F_0\\) = fluorescence units\n\\(F_b\\) = background fluorescence\n\\(F_{max}\\) = max fluorescence\n\\(C_{0.5}\\) = fractional cycle at which reaction fluorescence reaches half of \\(F_{max}\\)\n\\(k\\) = parameter related to the slope\nat \\(C = C_{0.5}\\), slope = \\(\\frac{F_{max}}{4k}\\)"
+  },
+  {
+    "objectID": "qPCR_presentation.html#an-example-sars-cov2",
+    "href": "qPCR_presentation.html#an-example-sars-cov2",
+    "title": "Quantitative or Real-Time Polymerase Chain Reactions",
+    "section": "An example SARS-CoV2",
+    "text": "An example SARS-CoV2\n\nWe are detecting different target in the same reaction!"
+  },
+  {
+    "objectID": "qPCR_presentation.html#what-about-quantification",
+    "href": "qPCR_presentation.html#what-about-quantification",
+    "title": "Quantitative or Real-Time Polymerase Chain Reactions",
+    "section": "What about quantification",
+    "text": "What about quantification\n\nWe are using dilutions to create a standard curve\n\nIf we know the absolute amount, then we have a quantitative assay\nIf we don`t know the absolute amount, then we have a semi-quantitative assay\n\n\nKeep in mind that Avrocado’s constant is a big number, \\(6.022140857×10^{23}.mol^{-1}\\)\n… making a small mistake in quantifying your molar concentration has a big influence on the number of copies\n\n\nText(40, 0.11, 'Lowest starting material')"
+  },
+  {
+    "objectID": "qPCR_presentation.html#what-about-quantification-1",
+    "href": "qPCR_presentation.html#what-about-quantification-1",
+    "title": "Quantitative or Real-Time Polymerase Chain Reactions",
+    "section": "What about quantification",
+    "text": "What about quantification\nFrom the previous we can create a standard curve\n\n\\[cons = 10^{(\\frac{-1}{3} . (Ct - 27.81))}\\]"
+  },
+  {
+    "objectID": "qPCR_presentation.html#diagnostic-applications",
+    "href": "qPCR_presentation.html#diagnostic-applications",
+    "title": "Quantitative or Real-Time Polymerase Chain Reactions",
+    "section": "Diagnostic Applications",
+    "text": "Diagnostic Applications\n\nDetection and quantification of pathogens\nGene expression analysis\nClinical diagnosis of diseases\nMonitoring treatment response\nForensic applications"
+  },
+  {
+    "objectID": "qPCR_presentation.html#case-studies",
+    "href": "qPCR_presentation.html#case-studies",
+    "title": "Quantitative or Real-Time Polymerase Chain Reactions",
+    "section": "Case Studies",
+    "text": "Case Studies\n\nExample 1: Quantification of viral load in HIV patients\nExample 2: Diagnosis of genetic disorders using real-time PCR\nExample 3: Tracking disease outbreaks through pathogen detection"
+  },
+  {
+    "objectID": "qPCR_presentation.html#qa-and-discussion",
+    "href": "qPCR_presentation.html#qa-and-discussion",
+    "title": "Quantitative or Real-Time Polymerase Chain Reactions",
+    "section": "Q&A and Discussion",
+    "text": "Q&A and Discussion"
   }
 ]
